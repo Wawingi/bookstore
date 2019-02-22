@@ -35,12 +35,6 @@
                                 <input required="" type="text" class="form-control" name="price" placeholder="ex: $ 100.00">
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="field-3" class="control-label">Authors</label>
-                                <input required="" type="text" class="form-control" name="author" placeholder="ex: James Gosling, Ada Lovelace">
-                            </div>
-                        </div>
                     </div>                    
                     <input type="hidden" value="register" name="operation">
                     <div class="modal-footer">

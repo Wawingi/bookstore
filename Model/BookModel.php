@@ -2,6 +2,7 @@
 require_once 'crud.php';
 class BookModel extends Crud{
     protected $tabela = "book";
+    protected $tabela1 = "author_book";
     private $title;
     private $isbn;
     private $price;
@@ -50,14 +51,21 @@ class BookModel extends Crud{
 
 
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (title,author,isbn,price,type) VALUES (:title,:author,:isbn,:price,:type)";
+        $sql = "INSERT INTO $this->tabela (title,isbn,price,type) VALUES (:title,:isbn,:price,:type)";
         $stmt = Conexao::prepare($sql);
         $stmt->bindParam(':title', $this->title);
-        $stmt->bindParam(':author', $this->author);
         $stmt->bindParam(':isbn', $this->isbn);
         $stmt->bindParam(':price', $this->price);
         $stmt->bindParam(':type', $this->type);
         return $stmt->execute();        
+    }
+
+    public function insertAuthorBook($id_author,$id_book) {
+        $sql = "INSERT INTO $this->tabela1 (id_author,id_book) VALUES (:id_author,:id_book)";
+        $stmt = Conexao::prepare($sql);
+        $stmt->bindParam(':id_author', $id_author);
+        $stmt->bindParam(':id_book', $id_book);
+        return $stmt->execute();       
     }
 
     public function static(){
@@ -67,12 +75,22 @@ class BookModel extends Crud{
         return $stmt->fetch(); 
     }
 
-    public function findAuthorBooks($author){
-        $sql = "SELECT * FROM $this->tabela WHERE author = :author";
+    public function findAuthorBooks($id_book){
+        $sql = "SELECT a.name 
+                FROM author a, book b, author_book ab 
+                WHERE b.id=ab.id_book AND a.id=ab.id_author AND b.id = :id_book";
         $stmt = Conexao::prepare($sql);
-        $stmt->bindParam(':author',$author, PDO::PARAM_STR);
+        $stmt->bindParam(':id_book',$id_book, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+
+    public function findBook($id){
+        $sql = "SELECT * FROM $this->tabela WHERE id = :id";
+        $stmt = Conexao::prepare($sql);
+        $stmt->bindParam(':id',$id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch();
     }
 
     public function findAuthors(){

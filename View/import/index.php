@@ -70,7 +70,6 @@ function __autoload($class_nome) {
                                             <th style="text-align: center">Type</th>
                                             <th style="text-align: center">Isbn</th>
                                             <th style="text-align: center">Title</th>
-                                            <th style="text-align: center">Author(s)</th>
                                             <th style="text-align: center">Options</th>
                                         </tr>
                                         </thead>
@@ -87,8 +86,7 @@ function __autoload($class_nome) {
                                             <td style="text-align: center"><?php echo '['.$valor->type.']'; ?></td>
                                             <td style="text-align: center"><?php echo $valor->isbn; ?></td>
                                             <td style="text-align: center"><?php echo $valor->title; ?></td>
-                                            <td style="text-align: center"><?php echo $valor->author; ?></td>
-
+                                            
                                             <td style="text-align: center;word-spacing: 10px">        
                                                 <?php echo "<a href='../nota/index.php?acao=".base64_encode('ver')."&id=". base64_encode($valor->id) ."' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Ver'><i class='fa fa-eye'></i></a>" ?>
                                                 <?php echo "<a href='#?acao=".base64_encode('editar')."&id=". base64_encode($valor->id) ."' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Editar'><i class='fa fa-pencil'></i></a>" ?>
