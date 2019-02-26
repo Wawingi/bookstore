@@ -51,13 +51,15 @@ class BookModel extends Crud{
 
 
     public function insert() {
+        $db = new Conexao();
         $sql = "INSERT INTO $this->tabela (title,isbn,price,type) VALUES (:title,:isbn,:price,:type)";
         $stmt = Conexao::prepare($sql);
         $stmt->bindParam(':title', $this->title);
         $stmt->bindParam(':isbn', $this->isbn);
         $stmt->bindParam(':price', $this->price);
         $stmt->bindParam(':type', $this->type);
-        return $stmt->execute();        
+        $stmt->execute(); 
+        return $db->getInstance()->lastInsertId();             
     }
 
     public function insertAuthorBook($id_author,$id_book) {

@@ -69,27 +69,25 @@ function __autoload($class_nome) {
                                                 $total+=$valor->price;
                                         ?>
                                         <tbody>
-                                        <tr>
-                                            <td style="text-align: center"><?php echo ++$cont; ?></td>
-                                            <td style="text-align: center"><?php echo '£ '. $valor->price; ?></td>
-                                            <td style="text-align: center"><?php echo '['.$valor->type.']'; ?></td>
-                                            <td style="text-align: center"><?php echo $valor->isbn; ?></td>
-                                            <td style="text-align: center"><?php echo $valor->title; ?></td>
-                                            
-                                            <td style="text-align: center;word-spacing: 10px">        
-                                                <?php echo "<a href='verlivro.php?operation=".base64_encode('verlivro')."&id=". base64_encode($valor->id) ."' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Ver'><i class='fa fa-eye'></i></a>" ?>
-                                                <?php echo "<a href='#?acao=".base64_encode('editar')."&id=". base64_encode($valor->id) ."' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Editar'><i class='fa fa-pencil'></i></a>" ?>
-                                                <?php echo "<a href='index?operation=".base64_encode('eliminar')."&id=". base64_encode($valor->id) ."' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Eliminar'><i class='fa fa-trash-o'></i></a>" ?>
-                                            </td>
-                                        </tr>
-                                      <?php endforeach; ?>
-                                      <tr>
-                                          <td style="text-align: center"><?php echo ++$cont; ?></td>
-                                          <td style="text-align: center;font-weight:bold"><?php echo '£ '. $total; ?></td>
-                                          <td style="text-align: center;font-weight:bold"><?php echo 'TOTAL'; ?></td>
-                                                                                
-                                      </tr>
-
+                                            <tr>
+                                                <td style="text-align: center"><?php echo ++$cont; ?></td>
+                                                <td style="text-align: center"><?php echo '£ '. $valor->price; ?></td>
+                                                <td style="text-align: center"><?php echo '['.$valor->type.']'; ?></td>
+                                                <td style="text-align: center"><?php echo $valor->isbn; ?></td>
+                                                <td style="text-align: center"><?php echo $valor->title; ?></td>
+                                                
+                                                <td style="text-align: center;word-spacing: 10px">        
+                                                    <?php echo "<a href='verlivro.php?operation=".base64_encode('verlivro')."&id=". base64_encode($valor->id) ."' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Ver'><i class='fa fa-eye'></i></a>" ?>
+                                                    <?php echo "<a href='#?acao=".base64_encode('editar')."&id=". base64_encode($valor->id) ."' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Editar'><i class='fa fa-pencil'></i></a>" ?>
+                                                    <?php echo "<a href='index?operation=".base64_encode('eliminar')."&id=". base64_encode($valor->id) ."' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Eliminar'><i class='fa fa-trash-o'></i></a>" ?>
+                                                </td>
+                                            </tr>
+                                            <?php endforeach; ?>
+                                            <tr>
+                                                <td style="text-align: center"><?php echo ++$cont; ?></td>
+                                                <td style="text-align: center;font-weight:bold"><?php echo '£ '. $total; ?></td>
+                                                <td style="text-align: center;font-weight:bold"><?php echo 'TOTAL'; ?></td>                                          
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>

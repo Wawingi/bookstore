@@ -13,10 +13,12 @@ class AuthorModel extends Crud{
     }
 
     public function insert() {
+        $db = new Conexao();
         $sql = "INSERT INTO $this->tabela (name) VALUES (:name)";
         $stmt = Conexao::prepare($sql);
         $stmt->bindParam(':name', $this->name);
-        return $stmt->execute();        
+        $stmt->execute();
+        return $db->getInstance()->lastInsertId();        
     }
 
 
@@ -37,7 +39,7 @@ class AuthorModel extends Crud{
     }
 
     public function findAuthors(){
-        $sql = "SELECT * FROM $this->tabela";
+        $sql = "SELECT DISTINCT(name) FROM $this->tabela";
         $stmt = Conexao::prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();

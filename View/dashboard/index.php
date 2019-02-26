@@ -1,26 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
-        <meta name="author" content="Coderthemes">
-
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-        <title>DAMAXAWA</title>
-
-        <link href="../Assets/plugins/switchery/switchery.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../Assets/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css"/>
-
-        <link href="../Assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        
-		<link href="../Assets/css/icons.css" rel="stylesheet" type="text/css"/>
-        
-		<link href="../Assets/css/style.css" rel="stylesheet" type="text/css"/>
-        <script src="../Assets/js/modernizr.min.js" type="text/javascript"></script>
-        
-    </head>
+    <!-- ========== Inclusão do head do HTML ====== -->
+    <?php require_once '../includes/head.php'; ?>
 
     <body class="fixed-left">
 

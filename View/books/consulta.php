@@ -46,10 +46,10 @@ function __autoload($class_nome) {
                                             <div class="col-md-10">
                                                 <select class="custom-select mt-3" name="author">
                                                 <?php
-                                                    $book = new BookModel();
-                                                    foreach($book->findAuthors() as $key=>$value):
+                                                    $author = new AuthorModel();
+                                                    foreach($author->findAuthors() as $key=>$value):
                                                 ?>
-                                                    <option><?php echo $value->author ?></option>
+                                                    <option><?php echo $value->name ?></option>
                                                 <?php endforeach; ?>
                                                 </select>
                                             </div>

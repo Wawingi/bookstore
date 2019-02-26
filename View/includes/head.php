@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="../Assets/plugins/morris/morris.css">
 
-    <title>DAMAXAWA</title>
+    <title>BookStore</title>
     
     <!-- Sweet Alert css -->
     <link href="../Assets/plugins/sweet-alert/sweetalert2.min.css" rel="stylesheet" type="text/css" />

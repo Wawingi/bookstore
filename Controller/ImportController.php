@@ -30,6 +30,7 @@
 
     function importarDados($filename){
             $book = new BookModel();
+            $author = new AuthorModel();
             $handle = fopen("../Assets/upload/$filename", "r");
             $row = 0;
             while ($line = fgetcsv($handle, 1000, ",")) {
@@ -41,7 +42,7 @@
                 $title = $line[1];
                 $isbn = $line[2];
                 $price = $line[3];
-                $author = $line[4];
+                $authorname = $line[4];
 
                 if($type=="Used"){
                     $price -=(25*$price)/100;
@@ -54,13 +55,39 @@
                 $book->setIsbn($isbn);
                 $book->setPrice($price);
                 $book->setType($type);
-                $book->setAuthor($author);
+
+                //função que pega um nome conjuto e o separa e persiste no banco de dados
+                if(strstr($authorname,"|")){            
+                    $name = explode("|",$authorname);
+                    $cont = count($name);
+                    $returnedIds = array();
+                    for($i=0;$i<$cont;$i++){
+                        $author->setName($name[$i]);
+                        $getId1 = $author->insert();
+                        $returnedIds[$i]=$getId1;
+                    }
+                    $getId2 = $book->insert();
                     
-                if ($book->insert()) {
-                    header("Location:../../View/import");
+                    for($j=0;$j<$cont;$j++){
+                        $book->insertAuthorBook($returnedIds[$j],$getId2);
+                    }                                    
                 } else {
-                    echo 'error while inserting';
-                }
+                    $author->setName($authorname);
+                    $getId1 = $author->insert();
+                    $getId2 = $book->insert(); 
+
+                    echo "ID AUTHOR:".$getId1;
+                    echo "ID BOOK:".$getId2;
+
+                    if ( $getId1 && $getId2) {
+                        if($book->insertAuthorBook($getId1,$getId2)){
+                             //exit();
+                             header("Location:../../View/import");
+                        }
+                    } else {
+                        echo 'error while inserting';
+                    }
+                }             
             } 
             fclose($handle);
     }

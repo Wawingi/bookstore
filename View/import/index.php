@@ -9,9 +9,10 @@ function __autoload($class_nome) {
 <?php require_once '../includes/head.php'; ?>
     <body class="fixed-left">
         <?php
+            require_once '../../Controller/BookController.php';
             require_once '../../Controller/ImportController.php';
             require_once '../includes/menubar.php';
-            require_once '../includes/menulateral.php';
+            require_once '../includes/menulateral.php';        
         ?>
         <!-- Begin page -->
         <div id="wrapper">
@@ -88,9 +89,9 @@ function __autoload($class_nome) {
                                             <td style="text-align: center"><?php echo $valor->title; ?></td>
                                             
                                             <td style="text-align: center;word-spacing: 10px">        
-                                                <?php echo "<a href='../nota/index.php?acao=".base64_encode('ver')."&id=". base64_encode($valor->id) ."' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Ver'><i class='fa fa-eye'></i></a>" ?>
-                                                <?php echo "<a href='#?acao=".base64_encode('editar')."&id=". base64_encode($valor->id) ."' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Editar'><i class='fa fa-pencil'></i></a>" ?>
-                                                <?php echo "<a href='index.php?acao=".base64_encode('eliminar')."&id=". base64_encode($valor->id) ."' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Eliminar'><i class='fa fa-trash-o'></i></a>" ?>
+                                                    <?php echo "<a href='../books/verlivro.php?operation=".base64_encode('verlivro')."&id=". base64_encode($valor->id) ."' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Ver'><i class='fa fa-eye'></i></a>" ?>
+                                                    <?php echo "<a href='#?acao=".base64_encode('editar')."&id=". base64_encode($valor->id) ."' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Editar'><i class='fa fa-pencil'></i></a>" ?>
+                                                    <?php echo "<a href='index?operation=".base64_encode('eliminar')."&id=". base64_encode($valor->id) ."' class='on-default edit-row' data-toggle='tooltip' data-placement='top' title='' data-original-title='Eliminar'><i class='fa fa-trash-o'></i></a>" ?>
                                             </td>
                                         </tr>
                                       <?php endforeach; ?>
