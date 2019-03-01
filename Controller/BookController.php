@@ -38,17 +38,19 @@
         $id_book = filter_input(INPUT_POST, 'id_book');
 
         $getAuthorId = $author->findAuthorId($name);
-    
         
         if($book->insertAuthorBook($getAuthorId->id,$id_book)){
             header("Location:../../View/books");
         }
 
-
-
     } else if($op=='editar'){
         
-    } 
+    } else if($op =='find'){
+        
+        $name = filter_input(INPUT_POST,'author');
+        $getbook = $book->findBookAuthor($name);
+
+    }
 
     //Métodos do get, obter dados
     else{

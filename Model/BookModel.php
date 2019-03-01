@@ -77,12 +77,24 @@ class BookModel extends Crud{
         return $stmt->fetch(); 
     }
 
+    //Return the name of Author who wrote the book
     public function findAuthorBooks($id_book){
         $sql = "SELECT a.name 
                 FROM author a, book b, author_book ab 
                 WHERE b.id=ab.id_book AND a.id=ab.id_author AND b.id = :id_book";
         $stmt = Conexao::prepare($sql);
         $stmt->bindParam(':id_book',$id_book, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    //Return the books wrotten by author
+    public function findBookAuthor($name){
+        $sql = "SELECT * 
+                FROM author a, book b, author_book ab 
+                WHERE b.id=ab.id_book AND a.id=ab.id_author AND a.name = :name";
+        $stmt = Conexao::prepare($sql);
+        $stmt->bindParam(':name',$name, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetchAll();
     }
@@ -97,6 +109,15 @@ class BookModel extends Crud{
 
     public function findAuthors(){
         $sql = "SELECT DISTINCT(author) FROM $this->tabela";
+        $stmt = Conexao::prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    public function findAll(){
+        $sql = "SELECT b.id,b.title,b.isbn,b.price,b.type,a.name
+                FROM book b,author a, author_book ab
+                WHERE b.id=ab.id_book AND a.id=ab.id_author";
         $stmt = Conexao::prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();

@@ -74,7 +74,7 @@ function __autoload($class_nome) {
                             <div class="row">
                                 <div class="col-12">
                                     <div class="card-box table-responsive">
-                                        <h4 class="m-t-0 header-title">Author(s): <?php echo $value->author; ?>        
+                                        <h4 class="m-t-0 header-title">Author(s): <?php echo $value->name; ?>        
                                         <hr><br>
                                         <div class="row">
                                             <div class="col-md-5">
