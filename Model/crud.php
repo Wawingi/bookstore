@@ -15,7 +15,7 @@
             return $stmt->fetch(); 
         }
         
-        public function findAll(){
+        public function All(){
             $sql = "SELECT * FROM $this->tabela";
             $stmt = Conexao::prepare($sql);
             $stmt->execute();

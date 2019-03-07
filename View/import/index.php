@@ -77,7 +77,7 @@ function __autoload($class_nome) {
                                         <?php
                                             $cont=0;$total=0;
                                             $book = new BookModel();
-                                            foreach ($book->findAll() as $chave=>$valor):
+                                            foreach ($book->All() as $chave=>$valor):
                                                 $total+=$valor->price;
                                         ?>
                                         <tbody>
