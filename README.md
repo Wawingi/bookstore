@@ -12,6 +12,9 @@ O administrador possui duas formas de inserções de dados, isto é dados relaci
 
 1. Inserção normal, onde os dados são inseridas em função de um cadastro. Passando estes o **titulo, autor, preço, tipo e isbn**.
 
+![addbook](https://user-images.githubusercontent.com/37840665/53960820-884ecf00-40e7-11e9-9823-6fe69b275b1f.png)
+
+
 2. Inserção via ficheiro CSV, onde os dados todos estão organizados em formato de linhas e colunas, e a responsabilidade do sistema é apenas importar o mesmo ficheiro e beber os dados contido nele.
 
 
