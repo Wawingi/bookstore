@@ -1,4 +1,7 @@
 # BookStore
+![logobook](https://user-images.githubusercontent.com/37840665/53962036-61de6300-40ea-11e9-8481-641c87a9295c.png)
+
+
 
 Bookstore é um sistema de gestão que que surge com a finalidade de dar suporte a estabelecimentos voltados a +area de comercialização de livros.
 
