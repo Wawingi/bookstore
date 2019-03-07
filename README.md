@@ -1,29 +1,32 @@
 # BookStore
 
-Foobar is a Python library for dealing with word pluralization.
+Bookstore é um sistema de gestão que que surge com a finalidade de dar suporte a estabelecimentos voltados a +area de comercialização de livros.
 
-## Installation
+## Instalação
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Não precisa executar nenhum setup, pois ele foi desenvolvido na plataforma web, apenas aceder o seguinte endereço [Bookstore.com](https://github.com/Wawingi/bookstore/blob/master/README.md) para ter acesso ao sistema.
 
-```bash
-pip install foobar
-```
+## Operação
 
-## Usage
+O administrador possui duas formas de inserções de dados, isto é dados relacionados a livros que serão cadastrados no estoque, as principais são:
 
-```python
-import foobar
+1. Inserção normal, onde os dados são inseridas em função de um cadastro. Passando estes o **titulo, autor, preço, tipo e isbn**.
 
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
+2. Inserção via ficheiro CSV, onde os dados todos estão organizados em formato de linhas e colunas, e a responsabilidade do sistema é apenas importar o mesmo ficheiro e beber os dados contido nele.
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+Possui ainda a parte da consulta, onde é possível visualizar os livros escritos por um autor e uma breve estatística sobre a quantidade de livros e o seu valor total em unidade monetária.
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+## Suporte
+
+Em caso de dúvidas ou assistência, por favor ligar para o seguinte contacto: [(+244) 925 80 26 55]() , ou usar o seguinte correio electrónico [wawingisebastiao2@gmail.com]() 
+
+
+
+## Contribuições
+Ela é totalmente livre, permitindo que cada um faça o pull requests a fim de contribuir com uma ou mais funcionalidades e aumentando assim a performance do mesmo.
+
+Por favor, certifique-se que a a contribuição será de grande impacto e benefício.
+
+## Licença
+[ZAP-Copyright](https://zap.co.ao/licence/)
