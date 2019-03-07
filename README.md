@@ -17,6 +17,8 @@ O administrador possui duas formas de inserções de dados, isto é dados relaci
 
 2. Inserção via ficheiro CSV, onde os dados todos estão organizados em formato de linhas e colunas, e a responsabilidade do sistema é apenas importar o mesmo ficheiro e beber os dados contido nele.
 
+![importbook](https://user-images.githubusercontent.com/37840665/53961337-a1a44b00-40e8-11e9-9e17-c5dcfc1e3a3c.png)
+
 
 Possui ainda a parte da consulta, onde é possível visualizar os livros escritos por um autor e uma breve estatística sobre a quantidade de livros e o seu valor total em unidade monetária.
 
